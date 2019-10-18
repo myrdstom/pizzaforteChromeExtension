@@ -19,12 +19,12 @@
   "permissions": [
     "cookies",
     "tabs",
-    "https://pizzaforte.hu"
+    "https://pizzaforte.hu/"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://pizzaforte.hu/penztar.php/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -32,7 +32,7 @@
     },
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://pizzaforte.hu/penztar.php/*"
       ],
       "js": [
         "src/inject/inject.js"
