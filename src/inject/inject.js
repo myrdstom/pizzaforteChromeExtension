@@ -38,7 +38,7 @@ chrome.extension.sendMessage({}, function(response) {
 				let promise = new Promise(() =>{
 					setTimeout(function firstAsync() {
 						if(document.querySelector('#orders_sticker_list_container')) {
-							const orders = document.querySelector('#orders_sticker_list_container');
+							document.querySelector('#orders_sticker_list_container').innerHTML;
 							chrome.runtime.sendMessage( "Order Added to Extension", function() {
 								console.log('message sent');
 							});
