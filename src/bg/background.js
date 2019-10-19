@@ -4,7 +4,7 @@
 */
 
 chrome.runtime.onMessage.addListener(function(request){
-    if( request == 'Order Added to Extension') {
+    if( request == 'Order Added to Extension' || request == 'Completed') {
         alert(request)
     }
     }

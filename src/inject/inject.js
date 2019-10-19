@@ -30,7 +30,6 @@ chrome.extension.sendMessage({}, function(response) {
 
 
 			/**
-			 *
 			 * @function onButtonClick Captures items added to the cart and sends a message to background.js
 			 * confirming that the items have been added
 			 */
@@ -38,7 +37,21 @@ chrome.extension.sendMessage({}, function(response) {
 				let promise = new Promise(() =>{
 					setTimeout(function firstAsync() {
 						if(document.querySelector('#orders_sticker_list_container')) {
-							const orders = document.querySelector('#orders_sticker_list_container');
+							const newOrders = document.querySelector('#orders_sticker_list_container').innerHTML;
+							const orderName = document.querySelectorAll('#orders_sticker_list_container ' +
+								'#orders_sticker_list_content ' +
+								'.orders_sticker_list tbody ');
+
+							for(let newName of orderName) {
+								for (let i = 0; i < newName.rows.length; i++) {
+									let thirdCol = newName.rows[i].cells[2].innerText;
+
+									let fourthCol = newName.rows[i].cells[3].innerText;
+									let fifthCol = newName.rows[i].cells[4].innerText;
+									console.log({'item Name':thirdCol, 'item QTY': fourthCol, 'item Price':fifthCol})
+								}
+							}
+							// console.log(newOrders)
 							chrome.runtime.sendMessage( "Order Added to Extension", function() {
 								console.log('message sent');
 							});
@@ -87,8 +100,11 @@ chrome.extension.sendMessage({}, function(response) {
 						'comment': comment,
 						'paymentMethod': paymentMethod,
 					}
+					console.log (data)
+					chrome.runtime.sendMessage( "Completed", function() {
+						console.log('Completed');
+					});
 
-					return data
 
 
 				}
@@ -102,4 +118,4 @@ chrome.extension.sendMessage({}, function(response) {
 	}, 10);
 });
 
-console.log('Loaded');
+
