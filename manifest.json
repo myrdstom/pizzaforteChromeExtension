@@ -34,10 +34,17 @@
       "matches": [
         "https://pizzaforte.hu/penztar.php/*",
         "https://pizzaforte.hu/pizzeppa.php/*",
-        "https://pizzaforte.hu/sticker.php/*"
+        "https://pizzaforte.hu/sticker.php/*",
+        "https://pizzaforte.hu/pizzadog.php/*",
+        "https://pizzaforte.hu/pizzak.php/*",
+        "https://pizzaforte.hu/salatak.php/*",
+        "https://pizzaforte.hu/desszertek.php/*",
+        "https://pizzaforte.hu/uditok.php/*",
+        "https://pizzaforte.hu/kiegeszitok.php/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/inject.js",
+        "src/bg/background.js"
       ]
     }
   ]
