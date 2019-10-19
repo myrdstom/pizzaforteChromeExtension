@@ -43,7 +43,8 @@
         "https://pizzaforte.hu/kiegeszitok.php/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/inject.js",
+        "src/bg/background.js"
       ]
     }
   ]
