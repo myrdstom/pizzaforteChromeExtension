@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --require @babel/register ./src/tests/ "
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/myrdstom/chrome-extension/issues"
   },
-  "homepage": "https://github.com/myrdstom/chrome-extension#readme"
+  "homepage": "https://github.com/myrdstom/chrome-extension#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "sinon-chrome": "^3.0.1"
+  }
 }
