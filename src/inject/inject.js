@@ -30,8 +30,8 @@ chrome.extension.sendMessage({}, function(response) {
 
 
 			/**
-			 * @function onButtonClick Captures items added to the cart and sends a message to background.js
-			 * confirming that the items have been added
+			 * @function onButtonClick Captures items added to the cart, logs the items in an object
+			 * and sends a message to background.js confirming that the items have been added.
 			 */
 			async function onButtonClick() {
 				let promise = new Promise(() =>{
@@ -69,7 +69,8 @@ chrome.extension.sendMessage({}, function(response) {
 				document.querySelector('#order_button').addEventListener('click', onClick, false);
 
 				/**
-				 * @function onClick Gets all the particulars of the customers Order details after he places an order
+				 * @function onClick Gets all the particulars of the customers Order details after he places an order.
+				 * It then logs all the items in the console and sends a message to background.js
 				 *
 				 * @returns { object } Details of the customers Order
 				 */
