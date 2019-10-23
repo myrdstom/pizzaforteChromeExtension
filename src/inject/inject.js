@@ -37,7 +37,6 @@ chrome.extension.sendMessage({}, function(response) {
 				let promise = new Promise(() =>{
 					setTimeout(function firstAsync() {
 						if(document.querySelector('#orders_sticker_list_container')) {
-							const newOrders = document.querySelector('#orders_sticker_list_container').innerHTML;
 							const orderName = document.querySelectorAll('#orders_sticker_list_container ' +
 								'#orders_sticker_list_content ' +
 								'.orders_sticker_list tbody ');
@@ -51,7 +50,6 @@ chrome.extension.sendMessage({}, function(response) {
 									console.log({'item Name':thirdCol, 'item QTY': fourthCol, 'item Price':fifthCol})
 								}
 							}
-							// console.log(newOrders)
 							chrome.runtime.sendMessage( "Order Added to Extension", function() {
 								console.log('message sent');
 							});
@@ -101,10 +99,9 @@ chrome.extension.sendMessage({}, function(response) {
 						'paymentMethod': paymentMethod,
 					}
 					console.log (data)
-					chrome.runtime.sendMessage( "Order Completed", function() {
+					chrome.runtime.sendMessage( "Completed", function() {
 						console.log('Completed');
 					});
-
 
 
 				}
